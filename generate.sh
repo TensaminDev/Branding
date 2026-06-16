@@ -46,10 +46,11 @@ perl -0pi -e '
 ' "$OUT/logo_square_outline.svg"
 
 inkscape --export-dpi=300 --export-type=png --export-filename="$OUT/logo_square.png" "$OUT/logo_square.svg"
-magick "$OUT/logo_square.png" -resize 96x96 "$OUT/favicon-96x96.png"
-magick "$OUT/logo_square.png" -resize 180x180 "$OUT/apple-touch-icon.png"
-magick "$OUT/logo_square.png" -resize 512x512 "$OUT/web-app-manifest-512x512.png"
-magick "$OUT/logo_square.png" \
+inkscape --export-dpi=300 --export-type=png --export-filename="$OUT/logo_square_outline.png" "$OUT/logo_square_outline.svg"
+magick "$OUT/logo_square_outline.png" -resize 96x96 "$OUT/favicon-96x96.png"
+magick "$OUT/logo_square_outline.png" -resize 180x180 "$OUT/apple-touch-icon.png"
+magick "$OUT/logo_square_outline.png" -resize 512x512 "$OUT/web-app-manifest-512x512.png"
+magick "$OUT/logo_square_outline.png" \
   \( -clone 0 -resize 16x16 \) \
   \( -clone 0 -resize 32x32 \) \
   \( -clone 0 -resize 48x48 \) \
